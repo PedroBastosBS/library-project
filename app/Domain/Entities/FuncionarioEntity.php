@@ -16,18 +16,18 @@ final class FuncionarioEntity {
         $this->id = $id;
         $this->nome = $nome;
         $this->cargo = $cargo;
-        $this->validate();
+        $this->validate($this->id,$this->nome,$this->cargo);
     }
 
-    private function validate(): bool
+    private function validate(string $id, string $nome, string $cargo): bool
     {
-        if($this->id === null){
+        if(strlen($id) === 0){
             throw FuncionarioEntityException::errorID($this->id);
         }
-        if($this->nome === null){
+        if(strlen($nome) === 0){
             throw FuncionarioEntityException::errorNome($this->nome);
         }
-        if($this->cargo === null){
+        if(strlen($cargo) === 0){
             throw FuncionarioEntityException::errorCargo($this->cargo);
         }
         return true;
