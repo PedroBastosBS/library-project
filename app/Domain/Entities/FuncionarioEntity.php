@@ -22,13 +22,13 @@ final class FuncionarioEntity {
     private function validate(string $id, string $nome, string $cargo): bool
     {
         if(strlen($id) === 0){
-            throw FuncionarioEntityException::errorID($this->id);
+            throw FuncionarioEntityException::errorID();
         }
         if(strlen($nome) === 0){
-            throw FuncionarioEntityException::errorNome($this->nome);
+            throw FuncionarioEntityException::errorNome();
         }
         if(strlen($cargo) === 0){
-            throw FuncionarioEntityException::errorCargo($this->cargo);
+            throw FuncionarioEntityException::errorCargo();
         }
         return true;
     }

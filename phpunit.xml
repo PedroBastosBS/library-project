@@ -7,7 +7,8 @@
     <testsuites>
         <testsuite name="Unit">
             <directory>tests/Unit</directory>
-            <directory>Tests/Unit/FuncionarioSpec</directory>
+
+
         </testsuite>
       </testsuites>
     <source>
