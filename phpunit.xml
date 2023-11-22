@@ -9,10 +9,7 @@
             <directory>tests/Unit</directory>
             <directory>Tests/Unit/FuncionarioSpec</directory>
         </testsuite>
-        <testsuite name="Feature">
-            <directory>tests/Feature</directory>
-        </testsuite>
-    </testsuites>
+      </testsuites>
     <source>
         <include>
             <directory>app</directory>
