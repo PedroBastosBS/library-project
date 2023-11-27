@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 namespace App\Domain\ValueObjects;
-use App\Domain\Exceptions\AutorValueObjectException;
 use App\Domain\Exceptions\CategoriaValueObjectException;
 
 final class CategoriaValueObject
@@ -12,15 +11,14 @@ final class CategoriaValueObject
   private string $descricao;
   private array $livros;
 
-  public function __construct(string $nome, string $descricao, array $livros) {
-    
+  public function __construct(string $nome, string $descricao) {
+
     $this->nome = $nome;
     $this->descricao = $descricao;
-    $this->livros = $livros;
 
-    $this->validate($this->nome,$this->descricao, $this->livros);
+    $this->validate($this->nome,$this->descricao);
 }
-  private function validate(string $nome, string $descricao, array $livros): bool
+  private function validate(string $nome, string $descricao): bool
     {
         if(strlen($nome) === 0){
             throw CategoriaValueObjectException::errorNome();
@@ -28,9 +26,7 @@ final class CategoriaValueObject
         if(strlen($descricao) === 0){
             throw CategoriaValueObjectException::errorDescricao();
         }
-        if(count($livros) === 0){
-            throw CategoriaValueObjectException::errorLivro();
-        }
+
         return true;
     }
 
@@ -41,7 +37,7 @@ final class CategoriaValueObject
 
     public function setNome(string $nome): void
     {
-        $this->id = $nome;
+        $this->nome = $nome;
     }
 
     public function getdescricao(): string
@@ -58,4 +54,10 @@ final class CategoriaValueObject
     {
         return $this->livros;
     }
+
+    public function adicionarCategoria(string $categoria): string
+    {
+        return $this->nome = $categoria;
+    }
+
 }

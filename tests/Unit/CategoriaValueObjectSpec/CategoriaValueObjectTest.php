@@ -37,18 +37,6 @@ class CategoriaValueObjectTest extends TestCase
         );
     }
 
-    public function testLivroEmpty(): void
-    {
-        $this->expectException(CategoriaValueObjectException::class);
-        $this->expectExceptionMessage('A categoria precisa ter pelo menos uma obra');
-
-        new CategoriaValueObject(
-            'autor2',
-            'descricao1',
-            []
-        );
-    }
-
     public function testListarLivros(): void
     {
 

@@ -14,6 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['prefix' => '/emprestimo'], function(){
+    Route::post('/', [\App\Presentation\Controllers\EmprestimoController::class,'realizarEmprestimo']);
+    Route::delete('/{id}', [\App\Presentation\Controllers\EmprestimoController::class,'FinalizarEmprestimo']);
+});
+
+Route::group(['prefix' => '/funcionario'], function(){
+   Route::post('/usuario', [\App\Presentation\Controllers\FuncionarioController::class, 'cadastrarUsuario']);
+   Route::post('/livro', [\App\Presentation\Controllers\FuncionarioController::class, 'cadastrarLivro']);
+   Route::put('/emprestimo', [\App\Presentation\Controllers\FuncionarioController::class, 'realizarEmprestimo']);
+   Route::put('/finalizar', [\App\Presentation\Controllers\FuncionarioController::class, 'FinalizarEmprestimo']);
+   Route::get('/listar-livros', [\App\Presentation\Controllers\FuncionarioController::class, 'listarLivros']);
+   Route::get('/listar-usuarios', [\App\Presentation\Controllers\FuncionarioController::class, 'listarUsuarios']);
+   Route::get('/listar-emprestimos', [\App\Presentation\Controllers\FuncionarioController::class, 'listarEmprestimo']);
+
+
 });

@@ -20,8 +20,14 @@
         <env name="APP_ENV" value="testing"/>
         <env name="BCRYPT_ROUNDS" value="4"/>
         <env name="CACHE_DRIVER" value="array"/>
-        <!-- <env name="DB_CONNECTION" value="sqlite"/> -->
-        <!-- <env name="DB_DATABASE" value=":memory:"/> -->
+        <server name="APP_ENV" value="testing"/>
+        <server name="DB_CONNECTION" value="sqlite"/>
+        <server name="DB_DATABASE" value=":memory:"/>
+      <!--   <server name="DB_CONNECTION_INTEGRATION" value="mysql"/>
+        <server name="DB_HOST_INTEGRATION" value="your_integration_database_host"/>
+        <server name="DB_DATABASE_INTEGRATION" value="your_integration_database_name"/>
+        <server name="DB_USERNAME_INTEGRATION" value="your_integration_database_username"/>
+        <server name="DB_PASSWORD_INTEGRATION" value="your_integration_database_password"/> -->
         <env name="MAIL_MAILER" value="array"/>
         <env name="QUEUE_CONNECTION" value="sync"/>
         <env name="SESSION_DRIVER" value="array"/>
