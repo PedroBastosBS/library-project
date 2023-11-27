@@ -14,11 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['prefix' => '/emprestimo'], function(){
-    Route::post('/', [\App\Presentation\Controllers\EmprestimoController::class,'realizarEmprestimo']);
-    Route::delete('/{id}', [\App\Presentation\Controllers\EmprestimoController::class,'FinalizarEmprestimo']);
-});
-
 Route::group(['prefix' => '/funcionario'], function(){
    Route::post('/usuario', [\App\Presentation\Controllers\FuncionarioController::class, 'cadastrarUsuario']);
    Route::post('/livro', [\App\Presentation\Controllers\FuncionarioController::class, 'cadastrarLivro']);

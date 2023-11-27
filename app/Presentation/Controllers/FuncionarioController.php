@@ -19,11 +19,9 @@ use Illuminate\Http\Response;
 class FuncionarioController
 {
     private FuncionarioUseCase $funcionarioUseCase;
-    private EmprestimoUseCase $emprestimoUseCase;
-    public function __construct(FuncionarioUseCase $funcionarioUseCase, EmprestimoUseCase $emprestimoUseCase)
+    public function __construct(FuncionarioUseCase $funcionarioUseCase)
     {
         $this->funcionarioUseCase = $funcionarioUseCase;
-        $this->emprestimoUseCase = $emprestimoUseCase;
     }
 
     public function cadastrarUsuario(Request $request): JsonResponse
